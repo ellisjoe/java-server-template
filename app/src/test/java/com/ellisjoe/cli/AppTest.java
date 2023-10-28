@@ -5,9 +5,8 @@ package com.ellisjoe.cli;
 
 import org.junit.jupiter.api.Test;
 
-class CliTest {
+class AppTest {
     @Test
     void exampleExecution() {
-        Cli.main(new String[]{"-n", "world"});
     }
 }

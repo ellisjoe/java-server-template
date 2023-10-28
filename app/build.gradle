@@ -1,34 +1,17 @@
 plugins {
     id 'application'
-    id 'org.graalvm.buildtools.native' version '0.9.27'
 }
 
 dependencies {
-    implementation 'info.picocli:picocli:'
-
-    annotationProcessor 'info.picocli:picocli-codegen'
+    implementation 'com.github.jknack:handlebars'
+    implementation 'io.undertow:undertow-core'
 
     testImplementation 'org.junit.jupiter:junit-jupiter'
     testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
 }
 
-java {
-    toolchain {
-        languageVersion = JavaLanguageVersion.of(21)
-        vendor = JvmVendorSpec.GRAAL_VM
-    }
-}
-
 application {
-    mainClass = 'com.ellisjoe.cli.Cli'
-}
-
-graalvmNative {
-    binaries {
-        main {
-            imageName = 'hello-world-cli'
-        }
-    }
+    mainClass = 'com.ellisjoe.app.App'
 }
 
 tasks.named('test') {
