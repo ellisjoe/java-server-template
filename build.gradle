@@ -1,0 +1,10 @@
+plugins {
+    id 'com.palantir.consistent-versions' version '2.16.0'
+    id 'org.graalvm.buildtools.native' version '0.9.27'
+}
+
+allprojects {
+    repositories {
+        mavenCentral()
+    }
+}
